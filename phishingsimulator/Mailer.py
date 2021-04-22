@@ -4,11 +4,11 @@ import traceback
 
 class Mailer:
 
-    def __init__(self, host=None, port=None, username=None, pw=None):
-        self.host = host
-        self.port = port
-        self.username = username
-        self.pw = pw
+    def __init__(self, serverinfo):
+        self.host = serverinfo.host
+        self.port = serverinfo.port
+        self.username = serverinfo.username
+        self.pw = serverinfo.pw
         self.server = smtplib.SMTP(self.host, self.port)
 
     def connect_to_server(self):
@@ -35,19 +35,12 @@ class Mailer:
             print("shutdown failed")
             traceback.print_exc()
 
-    def send_single_mail(self, to_addrs, mssg):
+    def send_mail(self, message):
         try:
-            self.server.send_message(mssg)
-            print("Success: Mail sent to " + to_addrs)
+            self.server.send_message(message)
+            print("Success: Mail sent")
             return 1
         except Exception as e:
             print("Failure: Mail not sent")
             traceback.print_exc()
             return 0
-
-    def send_multiple_mails(self, adresses, mssg):
-        counter = 0
-        for to_addrs in adresses:
-            print(to_addrs)
-            counter += self.send_single_mail(to_addrs, mssg)
-        print(str(counter) + " of " + str(len(adresses)) + " where sent successfully")
