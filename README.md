@@ -25,3 +25,8 @@ mails to the target groups.
 Please refer to the Test to get familiar on how to use the functionality. There are two scenarios implemented.
 The first one shows how to send a Spoof-mail, i.e. we create and send an email with a forged sender address. The second
 scenario shows how to send fake phishing-mails to multiple targets at once. Please note that access to an e-mail server is required.
+
+## License: 
+
+This project is open source. However, using it in in a commercial context requires permission of the author Basil Sattler. Please contact via the following E-Mail adress:
+basil.sattler@daten-analysieren.de
