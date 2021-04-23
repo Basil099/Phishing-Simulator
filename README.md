@@ -5,7 +5,7 @@ this lean project is designed for performing phishing simulations, for example i
 
 
 ## Usage:
-the project includes three classes that provide the functionality to perform a phishing simulation:
+the project includes four classes that provide the functionality to perform a phishing simulation:
 * AdressManager: this class is responsible for reading and providing email addresses. Also a random split into 
 two subgroups is performed which can be accessed. This is helpful if subgroups of the target group should be adressed
 by different fake phishing mails. Please note that the data should be stored in an excel-file with a specific format.
@@ -17,6 +17,8 @@ In case other mail-content is desired obviously this class can be extended.
 
 * Mailer: this class handles the SMTP client session, i.e. we can connect and log-in to an e-mail server and send
 mails to the target groups.
+
+* ServerInfo: this class merely holds the serverinformation.
 
 ## Test:
 
